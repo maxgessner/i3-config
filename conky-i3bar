@@ -1,0 +1,77 @@
+#!/bin/bash
+
+# Send the header so that i3bar knows we want to use JSON:
+echo '{"version":1, "click_events":true}'
+
+# Begin the endless array.
+echo '['
+
+# We send an empty first array of blocks to make the loop simpler:
+echo '[],'
+
+# Now send blocks with information forever:
+conky -c $HOME/.config/i3/conkyrc 2>/dev/null &
+pid=$!
+
+trap "kill $pid; exit 0" INT TERM EXIT
+
+while read line; do
+  nb=$(echo $line|awk -F, '{gsub(/^./,"", $0);gsub(/[\{\}\"\[]/, "", $0);print $1";"$2}')
+  # if button is needed - ${nb#*;}
+  # left button -button:1, right - button:3
+  case "${nb%%;*}" in
+    name:keyboard) 
+      case "${nb#*;}" in
+        button:3) xfce4-keyboard-settings & ;;
+      esac;;
+    name:disk) 
+      case "${nb#*;}" in
+        button:1) thunar --class="ThunarHome" & ;;
+      esac;;
+    name:cpu)
+      case "${nb#*;}" in
+      button:1) x-terminal-emulator -T "TerminalHtop" -e htop & ;;
+      esac;;
+    name:battery)
+      case "${nb#*;}" in
+        button:3) xfce4-power-manager -c & ;;
+        #button:3) xfce4-power-information & ;;
+      esac;;
+    name:volume)
+      case "${nb#*;}" in
+	button:1) pavucontrol & ;;
+	button:3) amixer -q sset Master toggle & ;;
+        button:4) amixer -q sset Master 5%+  & ;;
+        button:5) amixer -q sset Master 5%-  & ;;
+      esac;;
+    name:wlan) $HOME/bin/wifi_connect.sh &>/dev/null &  ;;
+    name:lan) ;;
+    name:date)
+      case "${nb#*;}" in
+      button:1) yad --calendar --title='Calendar selection' &>/dev/null & ;;
+      esac;;
+    name:time) ;;
+    name:mail) 
+      case "${nb#*;}" in
+      button:3) xdg-open "https://gmail.com" &>/dev/null & ;;
+      esac;;
+    name:logout)
+      case "${nb#*;}" in
+      button:1) $HOME/bin/logout.py &>/dev/null & ;;
+      esac;;
+    name:display)
+      case "${nb#*;}" in
+      button:1) xfce4-display-settings & ;;
+      esac;;
+    name:settings)
+      case "${nb#*;}" in
+      button:1) xfce4-settings-manager & ;;
+      esac;;
+    name:lock)
+      case "${nb#*;}" in
+      button:1) x-terminal-emulator -e i3lock -d -c 000000 -n & ;;
+      esac;;
+    *) logger "conky-i3bar: ${nb%%;*}" ;;
+  esac
+done
+
