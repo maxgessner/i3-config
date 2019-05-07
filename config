@@ -77,6 +77,8 @@ exec --no-startup-id xfce4-power-manager &
 # start thunar daemon
 exec --no-startup-id thunar --daemon &
 
+# start f.lux
+exec --no-startup-id fluxgui &
 # make pavucoltrol floating
 for_window [instance="pavucontrol"] floating enable 
 
