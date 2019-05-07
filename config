@@ -127,7 +127,9 @@ bindsym $mod+Shift+q kill
 # installed.
  #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
  #bindsym $mod+d exec --no-startup-id rofi
- bindsym $mod+d exec "rofi -modi window,drun,run -show drun -sidebar-mode terminal terinator -font 'hack 10' -color-window '#000000, #000000, #000000' -color-normal '#000000, #b3e774, #000000, #b3e774, #000000' -color-active '#000000, #b3e774, #000000, #b3e774, #000000' -color-urgent '#000000, #b3e774, #000000, #b3e774, #000000'"
+bindsym $mod+d exec "rofi -modi combi,window,drun -show combi -sidebar-mode terminal terinator -font 'hack 10' -color-window '#000000, #000000, #000000' -color-normal '#000000, #b3e774, #000000, #b3e774, #000000' -color-active '#000000, #b3e774, #000000, #b3e774, #000000' -color-urgent '#000000, #b3e774, #000000, #b3e774, #000000'"
+
+bindsym $alt+tab exec "rofi -modi combi,window,drun -show window -sidebar-mode terminal terinator -font 'hack 10' -color-window '#000000, #000000, #000000' -color-normal '#000000, #b3e774, #000000, #b3e774, #000000' -color-active '#000000, #b3e774, #000000, #b3e774, #000000' -color-urgent '#000000, #b3e774, #000000, #b3e774, #000000'"
 
 # change focus
 bindsym $mod+h focus left
@@ -266,13 +268,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#exec --no-startup-id xfce4-panel --disable-wm-check
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+#exec --no-startup-id xfce4-panel --disable-wm-check &
 exec --no-startup-id synapse
 exec --no-startup-id spotify
 exec --no-startup-id clipit
 exec --no-startup-id dropbox start
 for_window [class="Spotify"] move container to workspace "Music"
-for_window [class="Firefox"] move container to workspace 1
+# for_window [class="Firefox"] move container to workspace 1
 for_window [class="Hexchat"] move container to workspace "Chat"
 for_window [class="Nitrogen"] floating enable
 
@@ -313,7 +322,7 @@ bindsym $alt+c exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spoti
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-         #status_command i3status
+        #status_command i3status
 	
         # status_command exec ~/programs/barista
 	# font pango:noto sans mono 9
@@ -324,4 +333,4 @@ bar {
 }
 
 #bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
