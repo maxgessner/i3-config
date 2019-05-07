@@ -40,17 +40,15 @@ while read line; do
     name:volume)
       case "${nb#*;}" in
 	button:1) pavucontrol & ;;
-	button:3) amixer -q sset Master toggle & ;;
-        button:4) amixer -q sset Master 5%+  & ;;
-        button:5) amixer -q sset Master 5%-  & ;;
+	#button:3) amixer -q sset Master toggle & ;;
+	button:3) exec pactl set-sink-mute 0 toggle & ;;
+        #button:4) amixer -q sset Master 5%+  & ;;
+        button:4) exec pactl set-sink-volume 0 +5% & ;;
+        #button:5) amixer -q sset Master 5%-  & ;;
+        button:5) exec pactl set-sink-volume 0 -5% & ;;
       esac;;
     name:wlan) $HOME/bin/wifi_connect.sh &>/dev/null &  ;;
     name:lan) ;;
-    name:date)
-      case "${nb#*;}" in
-      button:1) yad --calendar --title='Calendar selection' &>/dev/null & ;;
-      esac;;
-    name:time) ;;
     name:mail) 
       case "${nb#*;}" in
       button:3) xdg-open "https://gmail.com" &>/dev/null & ;;
@@ -67,6 +65,11 @@ while read line; do
       case "${nb#*;}" in
       button:1) xfce4-settings-manager & ;;
       esac;;
+    name:date)
+      case "${nb#*;}" in
+      button:1) yad --calendar --title='Calendar selection' &>/dev/null & ;;
+      esac;;
+    name:time) ;;
     name:lock)
       case "${nb#*;}" in
       button:1) x-terminal-emulator -e i3lock -d -c 000000 -n & ;;
