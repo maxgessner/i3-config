@@ -60,6 +60,8 @@ while read line; do
     name:display)
       case "${nb#*;}" in
       button:1) xfce4-display-settings & ;;
+      button:4) exec xbacklight -inc 5 & ;;
+      button:5) exec xbacklight -dec 5 & ;;
       esac;;
     name:settings)
       case "${nb#*;}" in
