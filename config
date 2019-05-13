@@ -52,18 +52,22 @@ mode "resize_gaps_inner" {
 }
 bindsym $mod+Shift+i mode "resize_gaps_inner"
 
+# Only enable gaps on a workspace when there is at least one container
+smart_gaps on
+
 
 #set $term --no-startup-id i3-sensible-terminal
 set $logout i3-msg exit
 
 # #---Starting External Scripts---# #
 # Setting the background:
-# exec --no-startup-id feh --bg-scale ~/.config/wall.png
+exec --no-startup-id nitrogen --restore 
 # Starts dunst for notifications:
 # exec --no-startup-id dunst 
 #-conf ~/.config/dunst/dunstrc
 # Composite manager:
 exec --no-startup-id xcompmgr &
+exec --no-startup-id compton &
 
 # start xfce settings service
 exec --no-startup-id xfsettingsd --sm-client-disable &
@@ -224,6 +228,13 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym Mod1+Control+Left move workspace to output left
 bindsym Mod1+Control+Right move workspace to output right
 
+# workspace back and forth
+workspace_auto_back_and_forth yes
+
+# bind workspaces to monitors
+workspace "Chat" output primary
+workspace "Music" output primary
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -279,6 +290,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 #exec --no-startup-id xfce4-panel --disable-wm-check &
 exec --no-startup-id synapse
+for_window [class="Synapse"] border none
 exec --no-startup-id spotify
 exec --no-startup-id clipit
 exec --no-startup-id dropbox start
@@ -294,12 +306,17 @@ for_window[title="Calendar selection"] floating enable
 # bindsym $mod+t exec --no-startup-id tilda :w
 #
 
+# make xfce4-notification bottom right
+for_window [class="Xfce4-notifyd"] border none
+
+ 
 exec --no-startup-id pidgin
 for_window [instance="Pidgin"] move container to workspace "Chat"
-for_window [window_role="conversation"] move scratchpad
-bindsym Mod1+e [window_role="conversation"] scratchpad show
+for_window [window_role="conversation"] move container to workspace "Chat" 
+bindsym Mod1+e [window_role="conversation"] workspace "Chat" 
 
 for_window [class="Matplotlib"] floating enable 
+no_focus [Class="Matplotlib"]
 
 #exec --no-startup-id volumeicon
 
@@ -325,7 +342,7 @@ bindsym $alt+c exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spoti
 # finds out, if available)
 bar {
         #status_command i3status
-	
+	tray_output primary	
         # status_command exec ~/programs/barista
 	# font pango:noto sans mono 9
         # status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
