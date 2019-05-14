@@ -81,8 +81,18 @@ exec --no-startup-id xfce4-power-manager &
 # start thunar daemon
 exec --no-startup-id thunar --daemon &
 
+# start network manager
+exec_always --no-startup-id nm-applet &
+
+# handle usb drives using udiskie
+# exec_always --no-startup-id udiskie &
+
+# start orage calendar
+exec --no-startup-id orage &
+
 # start f.lux
 exec --no-startup-id fluxgui &
+
 # make pavucoltrol floating
 for_window [instance="pavucontrol"] floating enable 
 
@@ -187,6 +197,9 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
+# dynamically rename workspaces
+exec_always --no-startup-id exec $HOME/.cargo/bin/i3wsr &
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -201,28 +214,28 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
 
 # move focused container between monitors
 bindsym Mod1+Control+Left move workspace to output left
@@ -232,7 +245,8 @@ bindsym Mod1+Control+Right move workspace to output right
 workspace_auto_back_and_forth yes
 
 # bind workspaces to monitors
-workspace "Chat" output primary
+set $ws99 "99" output primary
+bindsym Mod1+e workspace number 99
 workspace "Music" output primary
 
 # reload the configuration file
@@ -253,6 +267,13 @@ bindsym $alt+button3 floating toggle
 
 # border changing
 bindsym $mod+b border toggle
+
+# hide borders on screens with just one window
+hide_edge_borders smart
+
+# no borders for popup windows
+for_window [window_type="popup_menu"] border none
+for_window [window_type="notification"] border none
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -296,7 +317,7 @@ exec --no-startup-id clipit
 exec --no-startup-id dropbox start
 for_window [class="Spotify"] move container to workspace "Music"
 # for_window [class="Firefox"] move container to workspace 1
-for_window [class="Hexchat"] move container to workspace "Chat"
+for_window [class="Hexchat"] move container to workspace "99"
 for_window [class="Nitrogen"] floating enable
 
 # make calendar widget float
@@ -310,10 +331,10 @@ for_window[title="Calendar selection"] floating enable
 for_window [class="Xfce4-notifyd"] border none
 
  
-exec --no-startup-id pidgin
-for_window [instance="Pidgin"] move container to workspace "Chat"
-for_window [window_role="conversation"] move container to workspace "Chat" 
-bindsym Mod1+e [window_role="conversation"] workspace "Chat" 
+exec --no-startup-id Franz
+for_window [instance="Franz"] move container to workspace "99"
+# for_window [window_role="conversation"] move container to workspace "99" 
+#bindsym Mod1+e [window_role="conversation"] workspace "Chat" 
 
 for_window [class="Matplotlib"] floating enable 
 no_focus [Class="Matplotlib"]
