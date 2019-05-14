@@ -69,7 +69,8 @@ while read line; do
       esac;;
     name:date)
       case "${nb#*;}" in
-      button:1) yad --calendar --title='Calendar selection' &>/dev/null & ;;
+      #button:1) yad --calendar --title='Calendar selection' &>/dev/null & ;;
+      button:1) orage & ;;
       esac;;
     name:time) ;;
     name:lock)
