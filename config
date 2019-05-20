@@ -317,7 +317,7 @@ exec --no-startup-id clipit
 exec --no-startup-id dropbox start
 for_window [class="Spotify"] move container to workspace "Music"
 # for_window [class="Firefox"] move container to workspace 1
-for_window [class="Hexchat"] move container to workspace "99"
+for_window [class="Hexchat"] move container to workspace number 99
 for_window [class="Nitrogen"] floating enable
 
 # make calendar widget float
@@ -330,9 +330,8 @@ for_window[title="Calendar selection"] floating enable
 # make xfce4-notification bottom right
 for_window [class="Xfce4-notifyd"] border none
 
- 
-exec --no-startup-id Franz
-for_window [instance="Franz"] move container to workspace "99"
+exec --no-startup-id franz
+for_window [instance="franz"] move container to workspace number 99 
 # for_window [window_role="conversation"] move container to workspace "99" 
 #bindsym Mod1+e [window_role="conversation"] workspace "Chat" 
 
