@@ -318,6 +318,7 @@ exec --no-startup-id dropbox start
 for_window [class="Spotify"] move container to workspace "Music"
 # for_window [class="Firefox"] move container to workspace 1
 for_window [class="Hexchat"] move container to workspace number 99
+for_window [class="TelegramDesktop"] move container to workspace number 99
 for_window [class="Nitrogen"] floating enable
 
 # make calendar widget float
