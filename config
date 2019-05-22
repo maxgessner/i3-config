@@ -61,13 +61,13 @@ set $logout i3-msg exit
 
 # #---Starting External Scripts---# #
 # Setting the background:
-exec --no-startup-id nitrogen --restore 
+exec_always --no-startup-id nitrogen --restore 
 # Starts dunst for notifications:
 # exec --no-startup-id dunst 
 #-conf ~/.config/dunst/dunstrc
 # Composite manager:
-exec --no-startup-id xcompmgr &
-exec --no-startup-id compton &
+exec_always --no-startup-id xcompmgr &
+exec_always --no-startup-id compton &
 
 # start xfce settings service
 exec --no-startup-id xfsettingsd --sm-client-disable &
@@ -91,7 +91,7 @@ exec_always --no-startup-id nm-applet &
 exec --no-startup-id orage &
 
 # start f.lux
-exec --no-startup-id fluxgui &
+exec_always --no-startup-id fluxgui &
 
 # make pavucoltrol floating
 for_window [instance="pavucontrol"] floating enable 
@@ -313,12 +313,14 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 exec --no-startup-id synapse
 for_window [class="Synapse"] border none
 exec --no-startup-id spotify
-exec --no-startup-id clipit
+exec_always --no-startup-id clipit
 exec --no-startup-id dropbox start
 for_window [class="Spotify"] move container to workspace "Music"
 # for_window [class="Firefox"] move container to workspace 1
 for_window [class="Hexchat"] move container to workspace number 99
+exec --no-startup-id telegram
 for_window [class="TelegramDesktop"] move container to workspace number 99
+for_window [class="Rambox"] move container to workspace number 99
 for_window [class="Nitrogen"] floating enable
 
 # make calendar widget float
@@ -331,7 +333,7 @@ for_window[title="Calendar selection"] floating enable
 # make xfce4-notification bottom right
 for_window [class="Xfce4-notifyd"] border none
 
-exec --no-startup-id franz
+# exec --no-startup-id franz
 for_window [instance="franz"] move container to workspace number 99 
 # for_window [window_role="conversation"] move container to workspace "99" 
 #bindsym Mod1+e [window_role="conversation"] workspace "Chat" 
