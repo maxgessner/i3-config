@@ -91,7 +91,7 @@ exec_always --no-startup-id nm-applet &
 exec --no-startup-id orage &
 
 # start f.lux
-exec_always --no-startup-id fluxgui &
+exec --no-startup-id fluxgui &
 
 # make pavucoltrol floating
 for_window [instance="pavucontrol"] floating enable 
@@ -143,9 +143,13 @@ bindsym $mod+Shift+q kill
 # installed.
  #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
  #bindsym $mod+d exec --no-startup-id rofi
-bindsym $mod+d exec "rofi -modi combi,window,drun -show combi -sidebar-mode terminal terinator -font 'hack 10' -color-window '#000000, #000000, #000000' -color-normal '#000000, #b3e774, #000000, #b3e774, #000000' -color-active '#000000, #b3e774, #000000, #b3e774, #000000' -color-urgent '#000000, #b3e774, #000000, #b3e774, #000000'"
+# bindsym $mod+d exec "rofi -modi combi,window,drun -show combi -sidebar-mode terminal terinator -font 'hack 9' -color-window '#000000, #000000, #000000' -color-normal '#000000, #b3e774, #000000, #b3e774, #000000' -color-active '#000000, #b3e774, #000000, #b3e774, #000000' -color-urgent '#000000, #b3e774, #000000, #b3e774, #000000'"
 
-bindsym $alt+tab exec "rofi -modi combi,window,drun -show window -sidebar-mode terminal terinator -font 'hack 10' -color-window '#000000, #000000, #000000' -color-normal '#000000, #b3e774, #000000, #b3e774, #000000' -color-active '#000000, #b3e774, #000000, #b3e774, #000000' -color-urgent '#000000, #b3e774, #000000, #b3e774, #000000'"
+bindsym $mod+d exec "rofi -modi combi,window,drun -show combi -sidebar-mode terminal terinator -font 'hack 9'"
+
+# bindsym $alt+Tab exec "rofi -modi combi,window,drun -show window -sidebar-mode terminal terinator -font 'hack 9' -color-window '#000000, #000000, #000000' -color-normal '#000000, #b3e774, #000000, #b3e774, #000000' -color-active '#000000, #b3e774, #000000, #b3e774, #000000' -color-urgent '#000000, #b3e774, #000000, #b3e774, #000000'"
+
+bindsym $alt+Tab exec "rofi -modi combi,window,drun -show window -sidebar-mode terminal terinator -font 'hack 9'"
 
 # change focus
 bindsym $mod+h focus left
@@ -313,7 +317,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 exec_always --no-startup-id synapse
 for_window [class="Synapse"] border none
 exec --no-startup-id spotify
-exec_always --no-startup-id clipit
+exec --no-startup-id clipit
 exec --no-startup-id dropbox start
 for_window [class="Spotify"] move container to workspace "Music"
 # for_window [class="Firefox"] move container to workspace 1
@@ -343,10 +347,10 @@ no_focus [Class="Matplotlib"]
 
 #exec --no-startup-id volumeicon
 
-bindsym $mod+Control+l exec i3lock -d -c 000000 -n
+bindsym $mod+Control+l exec i3lock -d -c 000000 -n -f
 #bindsym $alt_r+Control+l exec i3lock -d -c 000000 -n
-bindsym XF86ScreenSaver exec i3lock -d -c 000000 -n
-bindsym XF86Sleep exec "i3lock -d -c 000000 -n; sudo hibernate"
+bindsym XF86ScreenSaver exec i3lock -d -c 000000 -n -f
+bindsym XF86Sleep exec "i3lock -d -c 000000 -n -f; sudo hibernate"
 
 
 #exec --no-startup-id tilda -t 20
