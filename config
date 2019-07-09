@@ -253,7 +253,11 @@ bindsym Mod1+Shift+Right workspace next_on_output
 bindsym Mod1+Shift+L workspace next_on_output
 
 # move window to workspace number
-bindsym $mod+m exec i3-input -F 'move window to workspace "%s"' -P 'move to workspace: '
+bindsym $mod+Shift+m exec i3-input -F 'move window to workspace "%s"' -P 'move to workspace: '
+
+# go to specific workspace
+bindsym $mod+m exec i3-input -F 'workspace number "%s"' -P 'go to workspace: '
+
 # workspace back and forth
 workspace_auto_back_and_forth yes
 
