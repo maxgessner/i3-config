@@ -67,8 +67,9 @@ exec_always --no-startup-id nitrogen --restore
 # exec --no-startup-id dunst 
 #-conf ~/.config/dunst/dunstrc
 # Composite manager:
-exec_always --no-startup-id xcompmgr &
-exec_always --no-startup-id compton &
+#exec_always --no-startup-id xcompmgr -c -f -n &
+exec_always --no-startup-id xcompmgr -a &
+#exec_always --no-startup-id compton &
 
 # start xfce settings service
 exec --no-startup-id xfsettingsd --sm-client-disable &
