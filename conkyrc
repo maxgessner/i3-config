@@ -36,6 +36,9 @@ template8 ${template4 \1} #${template4 \2}
 #{ "full_text" : "${if_match ${battery_percent}>80}${else}${if_match ${battery_percent}>50}${else}${if_match ${battery_percent}>20}${else}${endif}${endif}${endif} ${battery_percent}%${if_empty ${battery_time}}${else} ${battery_time}${endif}",\
 #      "color" : "${if_match ${battery_percent}>50}\#ffffff${else}${if_match ${battery_percent}>20}\#ffff00${else}\#ff0000${endif}${endif}", "name" : "battery" },\
 
+#{ "full_text" : "${if_existing /tmp/newMail}${if_existing /tmp/newMail 0}${else}${if_existing /tmp/newMail 1}${else}${exec cat /tmp/newMail}${endif}${endif}${endif}", "color" : "\#ff0000", "name" : "mail" },\
+#{ "full_text" : "${if pactl info | grep Standard-Ziel | grep hdmi | tail -n 0; then echo 1; else echo 0; fi}", "color" : "\#ffffff", "name" : "sound_sink"},\
+
 TEXT
 [{ "full_text" : "${template9 AC ADP1}", "color" : "\#${template8 AC ADP1}", "name" : "keyboard" },\
 { "full_text" : " ${fs_free /}", "color" : "${if_match ${fs_free_perc}<10}\#ff0000${else}\#ffffff${endif}", "name" : "disk" },\
@@ -46,11 +49,9 @@ TEXT
 { "full_text" : "${template7 wlan0 wlan1 wlp1s0}", "color" : "\#ffffff", "name" : "wlan"},\
 { "full_text" : "${template3 eth0 eth1 p3p1}", "color" : "\#ffffff", "name" : "lan" },\
 { "full_text" : "${if_up tap0}${endif}", "color" : "\#0000ff", "name" : "vpn"},\
-#{ "full_text" : "${if_existing /tmp/newMail}${if_existing /tmp/newMail 0}${else}${if_existing /tmp/newMail 1}${else}${exec cat /tmp/newMail}${endif}${endif}${endif}", "color" : "\#ff0000", "name" : "mail" },\
 { "full_text" : " ", "color" : "\#ffffff", "name" : "display" },\
 { "full_text" : "", "color" : "\#ffffff", "name" : "settings" },\
 { "full_text" : "", "color" : "\#ffffff", "name" : "terminal_gui_settings" },\
-{ "full_text" : "${if pactl info | grep Standard-Ziel | grep hdmi | tail -n 0; then echo 1; else echo 0; fi}", "color" : "\#ffffff", "name" : "sound_sink"},\ 
 { "full_text" : "${if_match "${exec amixer -D pulse get 'Master',0 | egrep -o '\[off\]' | uniq}"=="[off]"}${else}${if_match ${exec amixer -D pulse get 'Master',0 | egrep -o '[0-9]{1,3}%' | rev | cut -c 2- | rev | uniq}>80}${else}${if_match ${exec amixer -D pulse get 'Master',0 | egrep -o '[0-9]{1,3}%' | rev | cut -c 2- | rev | uniq}>50}${else}${if_match ${exec amixer -D pulse get 'Master',0 | egrep -o '[0-9]{1,3}%' | rev | cut -c 2- | rev | uniq}>20}${else}${endif}${endif}${endif}${endif} ${if_match "${exec amixer -D pulse get 'Master',0 | egrep -o '\[off\]' | uniq}"=="[off]"}Mute${else}${exec amixer -D pulse get 'Master',0 | egrep -o '[0-9]{1,3}%' | uniq} ${endif}", "color" : "\#ffffff", "name" : "volume" },\
 { "full_text" : " ${time %a %d %b}", "color" : "\#ffffff", "name" : "date" },\
 { "full_text" : "${time %k:%M}", "color" : "\#ffff00", "name" : "time" },\
