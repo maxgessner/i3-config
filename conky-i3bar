@@ -77,6 +77,11 @@ while read line; do
       case "${nb#*;}" in
       button:3) x-terminal-emulator -T "gui-settings" -e ./own_programs/gui-settings & ;;
       esac;;
+    name:xfce4-appfinder)
+      case "${nb#*;}" in
+      button:1) xfce4-appfinder & ;;
+      button:3) xfce4-taskmanager & ;;
+      esac;;
     name:date)
       case "${nb#*;}" in
       #button:1) yad --calendar --title='Calendar selection' &>/dev/null & ;;

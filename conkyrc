@@ -52,6 +52,7 @@ TEXT
 { "full_text" : " ", "color" : "\#ffffff", "name" : "display" },\
 { "full_text" : "", "color" : "\#ffffff", "name" : "settings" },\
 { "full_text" : "", "color" : "\#ffffff", "name" : "terminal_gui_settings" },\
+{ "full_text" : "", "color" : "\#ffffff", "name" : "xfce4-appfinder" },\
 { "full_text" : "${if_match "${exec amixer -D pulse get 'Master',0 | egrep -o '\[off\]' | uniq}"=="[off]"}${else}${if_match ${exec amixer -D pulse get 'Master',0 | egrep -o '[0-9]{1,3}%' | rev | cut -c 2- | rev | uniq}>80}${else}${if_match ${exec amixer -D pulse get 'Master',0 | egrep -o '[0-9]{1,3}%' | rev | cut -c 2- | rev | uniq}>50}${else}${if_match ${exec amixer -D pulse get 'Master',0 | egrep -o '[0-9]{1,3}%' | rev | cut -c 2- | rev | uniq}>20}${else}${endif}${endif}${endif}${endif} ${if_match "${exec amixer -D pulse get 'Master',0 | egrep -o '\[off\]' | uniq}"=="[off]"}Mute${else}${exec amixer -D pulse get 'Master',0 | egrep -o '[0-9]{1,3}%' | uniq} ${endif}", "color" : "\#ffffff", "name" : "volume" },\
 { "full_text" : " ${time %a %d %b}", "color" : "\#ffffff", "name" : "date" },\
 { "full_text" : "${time %k:%M}", "color" : "\#ffff00", "name" : "time" },\
