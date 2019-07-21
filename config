@@ -401,7 +401,7 @@ bar {
         # status_command exec ~/programs/barista
 	# font pango:noto sans mono 9
         # status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
-         font pango: Icons regular 9, Awesome 9
+         font pango: Awesome 9, Icons regular 9
 	 status_command ~/.config/i3/conky-i3bar
 	#status_command exec --no-startup-id xfce4-panel --disable-wm-check 
 }
