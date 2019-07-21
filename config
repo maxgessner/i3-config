@@ -203,9 +203,11 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
 
 # dynamically rename workspaces
-exec_always --no-startup-id exec $HOME/.cargo/bin/i3wsr &
+#exec_always --no-startup-id exec $HOME/.cargo/bin/i3wsr &
+#exec_always --no-startup-id exec i3-workspace-names-daemon &
+exec_always --no-startup-id exec python3 $HOME/.config/i3/i3scripts/autoname_workspaces.py --norenumber_workspaces &
 
-# Define names for default workspaces for which we configure key bindings later on.
+# Define names for default workspaes for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
 set $ws2 "2"
@@ -263,8 +265,10 @@ workspace_auto_back_and_forth yes
 
 # bind workspaces to monitors
 set $ws99 "99" output primary
+#set workspace number 99 output primary
 bindsym Mod1+e workspace number 99
-workspace "Music" output primary
+set $ws98 "98" output primary
+#set workspace number 98 output primary
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -335,7 +339,7 @@ for_window [class="Synapse"] border none
 #exec --no-startup-id spotify
 exec --no-startup-id clipit
 exec --no-startup-id dropbox start
-for_window [class="Spotify"] move container to workspace "Music"
+for_window [class="Spotify"] move container to workspace number 98
 # for_window [class="Firefox"] move container to workspace 1
 for_window [class="Hexchat"] move container to workspace number 99
 #exec --no-startup-id /opt/telegram/telegram
@@ -396,7 +400,7 @@ bar {
         # status_command exec ~/programs/barista
 	# font pango:noto sans mono 9
         # status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
-         font pango: Icons regular 9
+         font pango: Icons regular 9, Awesome 9
 	 status_command ~/.config/i3/conky-i3bar
 	#status_command exec --no-startup-id xfce4-panel --disable-wm-check 
 }
