@@ -35,17 +35,23 @@ while read line; do
     name:battery)
       case "${nb#*;}" in
         button:3) xfce4-power-manager -c & ;;
-        #button:3) xfce4-power-information & ;;
+        #button:3) xfce4-power-informaftion & ;;
       esac;;
+    #name:sound_sink)
+      #case "${nb#*;}" in
+      #  button:1) if pactl info | grep Standard-Ziel | grep hdmi -q; then pacmd set-default-sink 1; else pacmd set-default-sink 0; fi & ;;
+      #  #button:1) pacmd set-default-sink 1 & ;;
+      #  #button:3) pacmd set-default-sink 0 & ;;
+      #esac;;
     name:volume)
       case "${nb#*;}" in
 	button:1) pavucontrol & ;;
-	#button:3) amixer -q sset Master toggle & ;;
-	button:3) exec pactl set-sink-mute 0 toggle & ;;
-        #button:4) amixer -q sset Master 5%+  & ;;
-        button:4) exec pactl set-sink-volume 0 +5% & ;;
-        #button:5) amixer -q sset Master 5%-  & ;;
-        button:5) exec pactl set-sink-volume 0 -5% & ;;
+	button:3) amixer -q -D pulse set Master toggle & ;;
+	#button:3) exec pactl set-sink-mute 0 toggle & ;;
+        button:4) amixer -q -D pulse set Master 5%+  & ;;
+        #button:4) exec pactl set-sink-volume 0 +5% & ;;
+        button:5) amixer -q -D pulse set Master 5%-  & ;;
+        #button:5) exec pactl set-sink-volume 0 -5% & ;;
       esac;;
     name:wlan) $HOME/bin/wifi_connect.sh &>/dev/null &  ;;
     name:lan) ;;
