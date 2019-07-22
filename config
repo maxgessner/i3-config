@@ -98,6 +98,9 @@ exec --no-startup-id fluxgui &
 # make pavucoltrol floating
 for_window [instance="pavucontrol"] floating enable 
 
+# make appfinder floating
+for_window [instance="xfce4-appfinder"] floating enable
+
 # Pulse Audio controls
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% , exec pkill -SIGRTMIN+10 i3blocks #increase sound volume
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% , exec pkill -SIGRTMIN+10 i3blocks #decrease sound volume
