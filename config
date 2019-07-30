@@ -400,14 +400,21 @@ bindsym $alt+c exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spoti
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        #status_command i3status
+        # status_command i3status
 	tray_output primary	
         # status_command exec ~/programs/barista
 	# font pango:noto sans mono 9
         # status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
-         font pango: Awesome 9, Icons regular 9
-	 status_command ~/.config/i3/conky-i3bar
-	#status_command exec --no-startup-id xfce4-panel --disable-wm-check 
+        # font pango: Awesome 9, Icons regular 9, Inconsolata 8
+        # font pango: Awesome 9, Icons regular 9, Hack 9
+        font pango: Awesome 9, Inconsolata 8, Hack 8
+        # font pango: Inconsolata 8
+	# status_command ~/.config/i3/conky-i3bar
+	# status_command exec conky -c ~/.config/i3/conkyrc
+	# status_command exec --no-startup-id xfce4-panel --disable-wm-check 
+	#  status_command ~/.config/bumblebee-status/bumblebee-status -m cpu memory battery time pasink pasource -p time.format="%H:%M" -t solarized
+	# status_command ~/.config/bumblebee-status/bumblebee-status -m disk load spotify memory caffeine brightness battery pasink datetime shortcut indicator -p datetime.format="%a %d.%m.%y  %H:%M" -p datetime.left-click="orage" -p battery.left-click="xfce4-power-manager -c" -p load.left-click='x-terminal-emulator -T "TerminalHtop" -e htop' -p shortcut.cmds="xfce4-appfinder;xfce4-settings-manager;$HOME/bin/logout.py &>/dev/null" shortcut.labels=";;" -a indicator battery  -p pasink.label="volume" -p disk.left-click="thunar" -t gruvbox-powerline
+	status_command ~/.config/bumblebee-status/bumblebee-status -m disk load spotify memory caffeine brightness battery pasink datetime shortcut indicator -p disk.left-click="thunar" load.left-click='x-terminal-emulator -T "TerminalHtop" -e htop' battery.left-click="xfce4-power-manager -c" datetime.format="%a %d.%m.%y  %H:%M" -p datetime.left-click="orage" shortcut.cmds="xfce4-appfinder;xfce4-settings-manager;x-terminal-emulator -T "gui-settings" -e ./own_programs/gui-settings;x-terminal-emulator -e i3lock -d -c 000000 -n;$HOME/bin/logout.py &>/dev/null" shortcut.labels=";;;;⏻" -a indicator battery -t greyish-powerline
 }
 
 #bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
