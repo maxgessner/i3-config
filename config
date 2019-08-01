@@ -56,10 +56,11 @@ bindsym $mod+Shift+i mode "resize_gaps_inner"
 # Only enable gaps on a workspace when there is at least one container
 smart_gaps on
 
-
 #set $term --no-startup-id i3-sensible-terminal
 set $logout i3-msg exit
 
+# load arandr default configuration
+exec -no-startup-id arandr ~/.screenlayout/default.sh &
 # #---Starting External Scripts---# #
 # Setting the background:
 exec_always --no-startup-id nitrogen --restore 
