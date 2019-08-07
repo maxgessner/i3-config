@@ -94,8 +94,8 @@ WINDOW_ICONS = {
     'robo3t': fa.icons['database'],
     'slack': fa.icons['slack'],
     'slic3r.pl': fa.icons['cube'],
-#    'spotify': fa.icons['music'],  # could also use the 'spotify' icon
-    'spotify': fa.icons['spotify'],  # could also use the 'spotify' icon
+    'spotify': fa.icons['music'],  # could also use the 'spotify' icon
+#    'spotify': fa.icons['spotify'],  # could also use the 'spotify' icon
     'steam': fa.icons['steam'],
     'subl': fa.icons['file-alt'],
     'subl3': fa.icons['file-alt'],

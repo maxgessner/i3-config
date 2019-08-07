@@ -100,7 +100,7 @@ WINDOW_ICONS = {
     'subl': fa.icons['file-alt'],
     'subl3': fa.icons['file-alt'],
     'sublime_text': fa.icons['file-alt'],
-    'telegramdesktop': fa.icons['telegram-plane'],
+    'telegramdesktop': fa.icons['paper-plane'],
     'thunar': fa.icons['copy'],
     'thunderbird': fa.icons['envelope'],
     'totem': fa.icons['play'],
