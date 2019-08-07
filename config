@@ -407,7 +407,7 @@ bar {
 	# font pango:noto sans mono 9
         # status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
         # font pango: Awesome 9, Icons regular 9, Inconsolata 9
-        font pango: Inconsolata 9, Font Awesome 5 Free 9
+        font pango: Inconsolata 8, Font Awesome 5 Free 8
         # font pango: Awesome 9, Icons regular 9, Hack 9
         # font pango: FontAwesome 9, Inconsolata 9
         # font pango: Inconsolata 9
