@@ -69,9 +69,9 @@ exec_always --no-startup-id nitrogen --restore
 # exec --no-startup-id dunst 
 #-conf ~/.config/dunst/dunstrc
 # Composite manager:
-exec_always --no-startup-id compton &
-#exec_always --no-startup-id xcompmgr -c -n &
-exec_always --no-startup-id xcompmgr -a &
+#exec_always --no-startup-id compton &
+exec_always --no-startup-id xcompmgr -c -n &
+#exec always --no-startup-id xcompmgr -a &
 
 # get prompts for root password again
 exec_always --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
