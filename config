@@ -56,6 +56,12 @@ bindsym $mod+Shift+i mode "resize_gaps_inner"
 # Only enable gaps on a workspace when there is at least one container
 smart_gaps on
 
+# set default orientation of new workspaces
+default_orientation auto
+
+# set default orientation of new containers
+workspace_layout default
+
 #set $term --no-startup-id i3-sensible-terminal
 set $logout i3-msg exit
 
@@ -306,7 +312,7 @@ bindsym $alt+button3 floating toggle
 bindsym $mod+b border toggle
 
 # hide borders on screens with just one window
-hide_edge_borders smart 
+hide_edge_borders none 
 
 # no borders for popup windows
 for_window [window_type="popup_menu"] border none
