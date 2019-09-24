@@ -359,11 +359,13 @@ for_window [class="Synapse"] border none
 exec --no-startup-id clipit
 exec --no-startup-id dropbox start
 for_window [class="Spotify"] move container to workspace number 98
+assign [class="Spotify"] → number 98
 # for_window [class="Firefox"] move container to workspace 1
 for_window [class="Hexchat"] move container to workspace number 99
 #exec --no-startup-id /opt/telegram/telegram
 exec --no-startup-id telegram-desktop
-for_window [class="TelegramDesktop"] move container to workspace number 99
+#for_window [class="TelegramDesktop"] move container to workspace number 99
+assign [class="TelegramDesktop"] → number 99
 for_window [class="Rambox"] move container to workspace number 99
 for_window [class="Nitrogen"] floating enable
 
