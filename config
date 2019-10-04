@@ -101,7 +101,7 @@ exec_always --no-startup-id nm-applet &
 # exec_always --no-startup-id udiskie &
 
 # start orage calendar
-exec --no-startup-id orage -t &
+exec_always --no-startup-id orage -t &
 
 # start f.lux
 exec --no-startup-id fluxgui &
@@ -353,19 +353,21 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 #exec --no-startup-id xfce4-panel --disable-wm-check &
-exec --no-startup-id synapse -s
+exec_always --no-startup-id synapse -s
 for_window [class="Synapse"] border none
 #exec --no-startup-id spotify
-exec --no-startup-id clipit
-exec --no-startup-id dropbox start
+exec --no-startup-id clipit &
+#exec --no-startup-id dropbox start
 for_window [class="Spotify"] move container to workspace number 98
 assign [class="Spotify"] → number 98
 # for_window [class="Firefox"] move container to workspace 1
 for_window [class="Hexchat"] move container to workspace number 99
 #exec --no-startup-id /opt/telegram/telegram
-exec --no-startup-id telegram-desktop
+exec --no-startup-id telegram-desktop &
+exec --no-startup-id signal-desktop &
 #for_window [class="TelegramDesktop"] move container to workspace number 99
 assign [class="TelegramDesktop"] → number 99
+assign [class="Signal"] → number 99
 for_window [class="Rambox"] move container to workspace number 99
 for_window [class="Nitrogen"] floating enable
 
@@ -399,7 +401,7 @@ bindsym XF86Sleep exec "i3lock -d -c 000000 -n -f; sudo hibernate"
 #exec --no-startup-id tilda -t 20
 #for_window [class="tilda"] floating enable
 
-exec --no-startup-id guake
+exec_always --no-startup-id guake --hide &
 
 show_marks yes
 
