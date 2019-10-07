@@ -66,8 +66,7 @@ workspace_layout default
 set $logout i3-msg exit
 
 # load arandr default configuration
-#exec -no-startup-id arandr ~/.screenlayout/default.sh &
-exec -no-startup-id /bin/zsh ~/.screenlayout/default.sh
+exec ~/.screenlayout/default.sh &
 # #---Starting External Scripts---# #
 # Setting the background:
 exec_always --no-startup-id nitrogen --restore 
