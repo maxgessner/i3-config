@@ -66,9 +66,10 @@ workspace_layout default
 set $logout i3-msg exit
 
 # load arandr default configuration
-exec ~/.screenlayout/default.sh &
+exec --no-startup-id  "sh -c 'sleep 1; exec ~/.screenlayout/default.sh'"
 # #---Starting External Scripts---# #
 # Setting the background:
+exec --no-startup-id "sh -c 'sleep 1; exec nitrogen --restore'"
 exec_always --no-startup-id nitrogen --restore 
 # Starts dunst for notifications:
 # exec --no-startup-id dunst 
