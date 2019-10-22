@@ -11,8 +11,10 @@
 
 #Needed for i3-gaps
 #hide_edge_borders both
-for_window [class="^.*"] border normal 1
-default_border normal 1
+#for_window [class="^.*"] border normal 1
+for_window [class="^.*"] border pixel 2
+#default_border normal 1
+default_border pixel 2
 gaps inner 2
 gaps outer 0
 
