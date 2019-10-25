@@ -392,7 +392,7 @@ for_window [instance="franz"] move container to workspace number 99
 
 for_window [class="Matplotlib"] floating enable 
 for_window [class="Matplotlib"] border normal 1 
-no_focus [Class="Matplotlib"]
+no_focus [class="Matplotlib"]
 
 #exec --no-startup-id volumeicon
 
@@ -406,6 +406,7 @@ bindsym XF86Sleep exec "i3lock -d -c 000000 -n -f; sudo hibernate"
 #for_window [class="tilda"] floating enable
 
 exec_always --no-startup-id guake --hide &
+for_window [instance="guake"] border none
 
 show_marks yes
 
