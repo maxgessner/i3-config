@@ -231,6 +231,9 @@ bindsym $mod+Shift+a focus child
 #exec_always --no-startup-id exec i3-workspace-names-daemon &
 exec_always --no-startup-id exec python3 $HOME/.config/i3/i3scripts/autoname_workspaces.py --norenumber_workspaces &
 
+# i3 alternating layout
+exec_always --no-startup-id exec python3 $HOME/.config/i3/i3scripts/i3-alternating-layout/alternating_layouts.py &
+
 # Define names for default workspaes for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
