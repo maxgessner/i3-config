@@ -232,6 +232,7 @@ bindsym $mod+Shift+a focus child
 exec_always --no-startup-id exec python3 $HOME/.config/i3/i3scripts/autoname_workspaces.py --norenumber_workspaces &
 
 # i3 alternating layout
+# needs i3-py to be installed via pip3 (sudo pip3 install i3-py)
 exec_always --no-startup-id exec python3 $HOME/.config/i3/i3scripts/i3-alternating-layout/alternating_layouts.py &
 
 # Define names for default workspaes for which we configure key bindings later on.
