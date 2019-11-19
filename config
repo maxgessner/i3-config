@@ -485,7 +485,7 @@ no_focus [class="Matplotlib"]
 bindsym Mod1+Control+l exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"; exec i3lock -d -c 000000 -n -f
 #bindsym $alt_r+Control+l exec i3lock -d -c 000000 -n
 bindsym XF86ScreenSaver exec i3lock -d -c 000000 -n -f
-bindsym XF86Sleep exec "i3lock -d -c 000000 -n -f; sudo pm-hibernate"
+bindsym XF86Sleep exec "systemctl suspend && i3lock -d -c 000000 -n -f"
 
 
 #exec --no-startup-id tilda -t 20
