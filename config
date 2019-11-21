@@ -250,78 +250,52 @@ exec_always --no-startup-id exec python3 $HOME/.config/i3/i3scripts/i3-alternati
 
 #### here is new
 
-#set $exec_i3_groups exec --no-startup-id i3-workspace-groups
+#exec_always --no-startup-id "killall mws-server; sleep 0.5; mws-server"
+#bindsym $mod+1 exec --no-startup-id "mws-client 1 k"
+#bindsym $mod+2 exec --no-startup-id "mws-client 2 k"
+#bindsym $mod+3 exec --no-startup-id "mws-client 3 k"
+#bindsym $mod+4 exec --no-startup-id "mws-client 4 k"
+#bindsym $mod+5 exec --no-startup-id "mws-client 5 k"
+#bindsym $mod+6 exec --no-startup-id "mws-client 6 k"
+#bindsym $mod+7 exec --no-startup-id "mws-client 7 k"
+#bindsym $mod+8 exec --no-startup-id "mws-client 8 k"
+#bindsym $mod+9 exec --no-startup-id "mws-client 9 k"
+#bindsym $mod+0 exec --no-startup-id "mws-client 0 k"
 #
-## Switch active workspace group
-#bindsym $mod+g exec --no-startup-id i3-switch-active-workspace-group
+#bindsym $alt+1 exec --no-startup-id "mws-client 1 s"
+#bindsym $alt+2 exec --no-startup-id "mws-client 2 s"
+#bindsym $alt+3 exec --no-startup-id "mws-client 3 s"
+#bindsym $alt+4 exec --no-startup-id "mws-client 4 s"
+#bindsym $alt+5 exec --no-startup-id "mws-client 5 s"
+#bindsym $alt+6 exec --no-startup-id "mws-client 6 s"
+#bindsym $alt+7 exec --no-startup-id "mws-client 7 s"
+#bindsym $alt+8 exec --no-startup-id "mws-client 8 s"
+#bindsym $alt+9 exec --no-startup-id "mws-client 9 s"
+#bindsym $alt+0 exec --no-startup-id "mws-client 0 s"
 #
-## Assign workspace to a group
-#bindsym $mod+Shift+g exec --no-startup-id i3-assign-workspace-to-group
+#bindsym $mod+Shift+1 exec --no-startup-id "mws-client 1 m"
+#bindsym $mod+Shift+2 exec --no-startup-id "mws-client 2 m"
+#bindsym $mod+Shift+3 exec --no-startup-id "mws-client 3 m"
+#bindsym $mod+Shift+4 exec --no-startup-id "mws-client 4 m"
+#bindsym $mod+Shift+5 exec --no-startup-id "mws-client 5 m"
+#bindsym $mod+Shift+6 exec --no-startup-id "mws-client 6 m"
+#bindsym $mod+Shift+7 exec --no-startup-id "mws-client 7 m"
+#bindsym $mod+Shift+8 exec --no-startup-id "mws-client 8 m"
+#bindsym $mod+Shift+9 exec --no-startup-id "mws-client 9 m"
+#bindsym $mod+Shift+0 exec --no-startup-id "mws-client 0 m"
 #
-## Select workspace to focus on
-#bindsym $mod+w exec --no-startup-id i3-focus-on-workspace
-#
-## Move the focused container to another workspace
-#bindsym $mod+Shift+w exec --no-startup-id i3-move-to-workspace
-#
-## Rename/renumber workspace. Uses Super+Alt+n
-#bindsym Mod1+Mod4+n exec --no-startup-id i3-rename-workspace
-
-#bindsym $mod+1 exec i3-workspace-groups focus-workspace 1
-#bindsym $mod+2 exec i3-workspace-groups focus-workspace 2
-#bindsym $mod+3 exec i3-workspace-groups focus-workspace 3
-#bindsym $mod+4 exec i3-workspace-groups focus-workspace 4
-#bindsym $mod+5 exec i3-workspace-groups focus-workspace 5
-#bindsym $mod+6 exec i3-workspace-groups focus-workspace 6
-#bindsym $mod+7 exec i3-workspace-groups focus-workspace 7
-#bindsym $mod+8 exec i3-workspace-groups focus-workspace 8
-#bindsym $mod+9 exec i3-workspace-groups focus-workspace 9
-#bindsym $mod+0 exec i3-workspace-groups focus-workspace 10
-#
-#bindsym $mod+Shift+1 exec i3-workspace-groups move-container-to-workspace 1
-#bindsym $mod+Shift+2 exec i3-workspace-groups move-container-to-workspace 2
-#bindsym $mod+Shift+3 exec i3-workspace-groups move-container-to-workspace 3
-#bindsym $mod+Shift+4 exec i3-workspace-groups move-container-to-workspace 4
-#bindsym $mod+Shift+5 exec i3-workspace-groups move-container-to-workspace 5
-#bindsym $mod+Shift+6 exec i3-workspace-groups move-container-to-workspace 6
-#bindsym $mod+Shift+7 exec i3-workspace-groups move-container-to-workspace 7
-#bindsym $mod+Shift+8 exec i3-workspace-groups move-container-to-workspace 8
-#bindsym $mod+Shift+9 exec i3-workspace-groups move-container-to-workspace 9
-#bindsym $mod+Shift+0 exec i3-workspace-groups move-container-to-workspace 10
-#
-#bindsym $mod+Control+1 workspace number 1
-#bindsym $mod+Control+2 workspace number 2
-#bindsym $mod+Control+3 workspace number 3
-#bindsym $mod+Control+4 workspace number 4
-#bindsym $mod+Control+5 workspace number 5
-#bindsym $mod+Control+6 workspace number 6
-#bindsym $mod+Control+7 workspace number 7
-#bindsym $mod+Control+8 workspace number 8
-#bindsym $mod+Control+9 workspace number 9
-#bindsym $mod+Control+0 workspace number 10
-#
-#bindsym $mod+Shift+Control+1 move container to workspace number 1
-#bindsym $mod+Shift+Control+2 move container to workspace number 2
-#bindsym $mod+Shift+Control+3 move container to workspace number 3
-#bindsym $mod+Shift+Control+4 move container to workspace number 4
-#bindsym $mod+Shift+Control+5 move container to workspace number 5
-#bindsym $mod+Shift+Control+6 move container to workspace number 6
-#bindsym $mod+Shift+Control+7 move container to workspace number 7
-#bindsym $mod+Shift+Control+8 move container to workspace number 8
-#bindsym $mod+Shift+Control+9 move container to workspace number 9
-#bindsym $mod+Shift+Control+0 move container to workspace number 10
-#
-#bindsym $mod+g exec i3-workspace-groups focus-group
-#bindsym $mod+Shift+g exec i3-workspace-groups move-container-to-group
-#bindsym $mod+Shift+Control+g exec i3-workspace-groups rename-group
+#bindsym $alt+Shift+1 exec --no-startup-id "mws-client 1 w"
+#bindsym $alt+Shift+2 exec --no-startup-id "mws-client 2 w"
+#bindsym $alt+Shift+3 exec --no-startup-id "mws-client 3 w"
+#bindsym $alt+Shift+4 exec --no-startup-id "mws-client 4 w"
+#bindsym $alt+Shift+5 exec --no-startup-id "mws-client 5 w"
+#bindsym $alt+Shift+6 exec --no-startup-id "mws-client 6 w"
+#bindsym $alt+Shift+7 exec --no-startup-id "mws-client 7 w"
+#bindsym $alt+Shift+8 exec --no-startup-id "mws-client 8 w"
+#bindsym $alt+Shift+9 exec --no-startup-id "mws-client 9 w"
+#bindsym $alt+Shift+0 exec --no-startup-id "mws-client 0 w"
 
 
-## Switch to previous/next workspace (in all groups).
-#bindsym $mod+p workspace prev
-#bindsym $mod+n workspace next
-# 
-#
-#
 #### here is end
 
 
@@ -511,6 +485,7 @@ bindsym $alt+c exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spoti
 bar {
         # status_command i3status
 	tray_output primary	
+	#strip_workspacei_numbers yes
         # status_command exec ~/programs/barista
 	# font pango:noto sans mono 9
         # status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
