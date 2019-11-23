@@ -78,7 +78,8 @@ exec_always --no-startup-id nitrogen --restore
 #-conf ~/.config/dunst/dunstrc
 # Composite manager:
 #exec_always --no-startup-id compton &
-exec_always --no-startup-id xcompmgr -c -n &
+#exec_always --no-startup-id xcompmgr -c -n &
+exec_always --no-startup-id xcompmgr -c &
 #exec always --no-startup-id xcompmgr -a &
 
 # get prompts for root password again
