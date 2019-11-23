@@ -329,10 +329,10 @@ bindsym Mod1+Control+Left move workspace to output left
 bindsym Mod1+Control+Right move workspace to output right
 
 # move workspace on output
-bindsym Mod1+Shift+Left workspace prev_on_output
-bindsym Mod1+Shift+H workspace prev_on_output
-bindsym Mod1+Shift+Right workspace next_on_output
-bindsym Mod1+Shift+L workspace next_on_output
+bindsym Mod1+Left workspace prev_on_output
+bindsym Mod1+H workspace prev_on_output
+bindsym Mod1+Right workspace next_on_output
+bindsym Mod1+L workspace next_on_output
 
 # move window to workspace number
 bindsym $mod+Shift+m exec i3-input -F 'move window to workspace "%s"' -P 'move to workspace: '
