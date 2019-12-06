@@ -325,14 +325,14 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# move focused container between monitors
+# move focused workspace between monitors
 bindsym Mod1+Control+Left move workspace to output left
 bindsym Mod1+Control+Right move workspace to output right
 
 # move workspace on output
-bindsym Mod1+Left workspace prev_on_output
+#bindsym Mod1+Left workspace prev_on_output
 bindsym Mod1+H workspace prev_on_output
-bindsym Mod1+Right workspace next_on_output
+#bindsym Mod1+Right workspace next_on_output
 bindsym Mod1+L workspace next_on_output
 
 # move window to workspace number
