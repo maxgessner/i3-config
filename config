@@ -474,7 +474,12 @@ show_marks yes
 
 bindsym $mod+i exec i3-input
 #bindsym $mod+m exec i3-input -F 'mark "%s"' -P 'Set mark for window: '
-#bindsym $mod+shift+m exec i3-input -F 'unmark "%s"' -P 'unmark: '
+# set one character mark for focused window
+bindsym $mod+n exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+# unset one character mark
+bindsym $mod+shift+n exec i3-input -F 'unmark %s' -l 1 -P 'Unmark: '
+# goto marked window
+bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 bindsym $alt+x exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause" 
 bindsym $alt+v exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next" 
