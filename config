@@ -429,7 +429,7 @@ assign [class="Spotify"] → number 98
 for_window [class="Hexchat"] move container to workspace number 99
 #exec --no-startup-id /opt/telegram/telegram
 exec --no-startup-id telegram-desktop &
-exec --no-startup-id signal-desktop --start-in-tray &
+#exec --no-startup-id signal-desktop --start-in-tray &
 #for_window [class="TelegramDesktop"] move container to workspace number 99
 assign [class="TelegramDesktop"] → number 99
 assign [class="Signal"] → number 99
