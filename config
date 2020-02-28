@@ -374,6 +374,10 @@ bindsym --release button2 kill
 # The right button toggles floating
 bindsym $alt+button3 floating toggle
 
+# adjust volume with keys
+bindsym $mod+plus exec "pactl set-sink-volume 0 +2%"
+bindsym $mod+minus exec "pactl set-sink-volume 0 -2%"
+
 # border changing
 bindsym $mod+b border toggle
 
