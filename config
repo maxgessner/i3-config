@@ -169,11 +169,11 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec "rofi -combi-modi window,drun -show combi -modi combi,window,drun -sidebar-mode terminal xfce4-terminal -font 'hack 9'"
 #bindsym Ctrl+space exec "rofi -combi-modi window,drun -show combi -modi combi,window,drun -sidebar-mode terminal xfce4-terminal -font 'hack 9'"
 #bindsym Ctrl+space exec "rofi -combi-modi window,drun -show combi -modi combi,window,drun -sidebar-mode terminal xfce4-terminal -font 'hack 9' -theme Adapta-Nokto"
-bindsym Ctrl+space exec "rofi -combi-modi window,drun -show combi -modi combi,window,drun -sidebar-mode -show-icons -font 'hack 9' -theme sidebar"
+bindsym Ctrl+space exec "rofi -combi-modi window,drun -show combi -modi combi,window,drun -sidebar-mode -show-icons -font 'hack 9' -theme sidebar -m -4"
 
 # bindsym $alt+Tab exec "rofi -modi combi,window,drun -show window -sidebar-mode terminal terinator -font 'hack 9' -color-window '#000000, #000000, #000000' -color-normal '#000000, #b3e774, #000000, #b3e774, #000000' -color-active '#000000, #b3e774, #000000, #b3e774, #000000' -color-urgent '#000000, #b3e774, #000000, #b3e774, #000000'"
 
-bindsym $alt+Tab exec "rofi -modi combi,window,drun -show window -sidebar-mode -show-icons -font 'hack 9' -theme sidebar"
+bindsym $alt+Tab exec "rofi -modi combi,window,drun -show window -sidebar-mode -show-icons -font 'hack 9' -theme sidebar -m -4"
 
 # change focus
 bindsym $mod+h focus left
