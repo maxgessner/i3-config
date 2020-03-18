@@ -497,15 +497,16 @@ bindsym $alt+c exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spoti
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-#colors {
+colors {
 #    separator #586e75
 #    background #002b36
+    background #00000000
 #    statusline #aea79f
 #    focused_workspace #586e75 #586e75 #ffffff
 #    active_workspace #073642 #073642 #ffffff
 #    inactive_workspace #002b36 #002b36 #aea79f
 #    urgent_workspace #77216f #77216f #ffffff
-#}
+}
 
         # status_command i3status
 	tray_output primary	
@@ -519,6 +520,7 @@ bar {
         # font pango: Awesome 9, Icons regular 9, Hack 9
         # font pango: FontAwesome 9, Inconsolata 9
         # font pango: Inconsolata 9
+	i3bar_command i3bar --transparency
 	# status_command ~/.config/i3/conky-i3bar
 	# status_command exec conky -c ~/.config/i3/conkyrc
 	# status_command exec --no-startup-id xfce4-panel --disable-wm-check 
