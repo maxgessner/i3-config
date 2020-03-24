@@ -132,7 +132,7 @@ set $alt Mod1
 # is used in the bar {} block below.
 #font pango:monospace 8
 #font pango: hack 7 
-font pango: noto sans 7 
+font pango: noto sans 8 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -208,6 +208,7 @@ bindsym $mod+Ctrl+v split v
 # toggle split orientation of container
 bindsym $mod+t split toggle
 
+# ME
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -240,6 +241,10 @@ exec_always --no-startup-id exec python3 $HOME/.config/i3/i3scripts/autoname_wor
 # needs i3-py to be installed via pip3 (sudo pip3 install i3-py)
 #exec_always --no-startup-id exec python3 $HOME/.config/i3/i3scripts/i3-alternating-layout/alternating_layouts.py &
 exec_always --no-startup-id i3altlayout
+
+# i3 layout-manager
+# save and restore window layout using rofi and some other programs
+bindsym $mod+F10 exec $HOME/.config/i3/i3scripts/i3-layout-manager/layout_manager.sh
 
 # Define names for default workspaes for which we configure key bindings later on.
 ## We use variables to avoid repeating the names in multiple places.
@@ -340,10 +345,10 @@ bindsym Mod1+H workspace prev_on_output
 bindsym Mod1+L workspace next_on_output
 
 # move window to workspace number
-bindsym $mod+Shift+m exec i3-input -F 'move window to workspace "%s"' -P 'move to workspace: '
+bindsym $mod+Shift+m exec i3-input -F 'move window to workspace "%s"' -l 2 -P 'move to workspace: '
 
 # go to specific workspace
-bindsym $mod+m exec i3-input -F 'workspace number "%s"' -P 'go to workspace: '
+bindsym $mod+m exec i3-input -F 'workspace number "%s"' -l 2 -P 'go to workspace: '
 
 # workspace back and forth
 workspace_auto_back_and_forth yes
