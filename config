@@ -440,6 +440,11 @@ exec --no-startup-id clipit &
 #exec --no-startup-id dropbox start
 for_window [class="Spotify"] move container to workspace number 98
 assign [class="Spotify"] → number 98
+#bindsym $meta+F9 [class="Spotify"] move scratchpad
+for_window [class="Spotify"] move scratchpad
+bindsym $mod+F9 [class="Spotify"] scratchpad show
+#bindsym $mod+shift+F9 [class="Spotify"] floating toggle, move container to workspace number 98
+
 # for_window [class="Firefox"] move container to workspace 1
 for_window [class="Hexchat"] move container to workspace number 99
 #exec --no-startup-id /opt/telegram/telegram
