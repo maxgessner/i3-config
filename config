@@ -151,6 +151,9 @@ font pango: noto sans 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $alt
 
+# disabling the annoying "ls" command in the terminal
+bindsym $alt+l nope
+
 # start a terminal
 # set $TERMINAL '/usr/bin/xfce4-terminal'
 bindsym $mod+Return exec i3-sensible-terminal
