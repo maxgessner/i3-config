@@ -77,7 +77,8 @@ exec_always --no-startup-id nitrogen --restore
 # exec --no-startup-id dunst 
 #-conf ~/.config/dunst/dunstrc
 # Composite manager:
-exec_always --no-startup-id "sh -c 'compton -cCb -i 0.8 --detect-rounded-corners'"
+#exec_always --no-startup-id "sh -c 'compton -cCb -i 0.8 --detect-rounded-corners --focus-exclude 'name="i3lock"''"
+exec_always --no-startup-id "sh -c 'compton -cCb -i 0.8 --detect-rounded-corners --config ~/.config/i3/compton.conf'"
 # exec_always --no-startup-id xcompmgr -n &
 # exec_always --no-startup-id xcompmgr -c &
 #exec_always --no-startup-id xcompmgr -s &
