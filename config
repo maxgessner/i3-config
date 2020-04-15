@@ -463,6 +463,9 @@ for_window [class="Nitrogen"] floating enable
 # make calendar widget float
 for_window[title="Calendar selection"] floating enable
 
+# make hamster time tracking window always float
+for_window[class="Hamster"] floating enable
+
 # Dropdown Terminal set to postion and floating mode
 # bindsym $mod+t exec --no-startup-id tilda :w
 #
