@@ -481,6 +481,7 @@ for_window [instance="franz"] move container to workspace number 99
 for_window [class="Matplotlib"] floating enable 
 for_window [class="Matplotlib"] border normal 1 
 no_focus [class="Matplotlib"]
+for_window [class="Tk"] floating enable
 
 #exec --no-startup-id volumeicon
 
