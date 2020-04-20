@@ -65,38 +65,6 @@ default_border pixel 2
 gaps inner 2
 gaps outer 0
 
-mode "resize_gaps_outer" {
-        bindsym plus    gaps outer current plus 5
-        bindsym minus   gaps outer current minus 5
-        bindsym 0       gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+Shift+o mode "default"
-        bindsym $mod+o mode "default"
-}
-bindsym $mod+Shift+o mode "resize_gaps_outer"
-
-mode "resize_gaps_inner" {
-        bindsym plus    gaps inner current plus 5
-        bindsym minus   gaps inner current minus 5
-        bindsym 0       gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default-"
-        bindsym Escape mode "default"
-        bindsym $mod+Shift+i mode "default"
-        bindsym $mod+i mode "default"
-}
-bindsym $mod+Shift+i mode "resize_gaps_inner"
-
 # Only enable gaps on a workspace when there is at least one container
 smart_gaps on
 
