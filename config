@@ -91,7 +91,7 @@ exec_always --no-startup-id nitrogen --restore
 # #---Services---# #
 
 # Composite manager:
-exec_always --no-startup-id "sh -c 'compton -cCb -i 0.8 --detect-rounded-corners --config ~/.config/i3/compton.conf'"
+exec_always --no-startup-id "sh -c 'compton -cCb -i 0.9 --detect-rounded-corners --config ~/.config/i3/compton.conf'"
 
 # get prompts for root password again
 exec_always --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
