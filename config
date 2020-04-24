@@ -102,8 +102,12 @@ exec --no-startup-id xfsettingsd --sm-client-disable &
 # start xfce volume service
 exec --no-startup-id xfce4-volumed &
 
+# start dunst for notification
+#exec killall -q xfce4-notifyd
+#exec --no-startup-id dunst -config ./config/i3/dunstrc &
+
 # start indicator-sound-switcher to switch output via tray symbol
-exec_always --no-startup-id indicator-sound-switcher &
+exec --no-startup-id indicator-sound-switcher &
 
 # start xfce power manager service
 exec --no-startup-id xfce4-power-manager &
