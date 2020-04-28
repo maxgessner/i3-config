@@ -482,6 +482,10 @@ bar {
 		    background #00000000
 	}
 
+	# disable scrolling to change workspaces
+	bindsym button4 nop
+	bindsym button5 nop
+
 	# position
 	position bottom
 
